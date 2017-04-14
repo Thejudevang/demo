@@ -1,0 +1,29 @@
+<div class="page-body">
+    <div class="row">
+      <div class="col-md-2">
+        <strong style="margin-right:10px;">Name: </strong>
+        <%= @store_location.name %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <strong style="margin-right:10px;">Latitude: </strong>
+        <%= @store_location.lat %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <strong style="margin-right:10px;">Longitude: </strong>
+        <%= @store_location.lng %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <strong style="margin-right:10px;">Logo: </strong>
+        <%= image_tag @store_location.logo.url(:thumb) %>
+      </div>
+    </div>
+</div>

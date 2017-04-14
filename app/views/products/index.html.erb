@@ -1,0 +1,34 @@
+<div class="table-responsive">
+	<div align="right">
+		<%= link_to 'AddProduct', new_product_url, class: "btn btn-primary" %>
+	</div>	
+
+<table class="table table-striped">
+<thead>
+	<tr>
+	<th> Logo </th>
+		<th> Style Code</th>
+		<th> title </th>
+		<th> Brand </th>
+		<th> updated_at</th>
+		<th> Actions </th>
+	</tr>
+	</thead>
+
+	<tbody>
+	<% @products.each do |product|%>
+	<tr>
+		<td><%= image_tag product.logo.url(:thumb) %></td>
+		<td><%= product.style %></td>
+		<td><%= product.title %></td>
+		<td><%= product.brand.name %></td>
+		<td><%= product.updated_at%></td>
+		<td> <%= link_to 'addinventory', new_product_inventory_url(product.id) %>|<%= link_to 'view', product_url(product.id) %>|<%= link_to 'edit', edit_product_path(product) %>|<%= link_to 'Delete', product_path(product),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+</div>

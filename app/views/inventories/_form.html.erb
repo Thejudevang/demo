@@ -1,0 +1,43 @@
+<% if @inventory.errors.any? %>
+   <div id="error_explanation">
+     <h2>
+       <%= pluralize(@inventory.errors.count, "error") %> prohibited
+       this inventory from being saved:
+     </h2>
+     <ul>
+       <% @inventory.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+       <% end %>
+     </ul>
+   </div>
+ <% end %>
+
+  <p>
+    <%= f.label :store %><br>
+    <%= f.select :store_id, options_from_collection_for_select(Store.all, :id, :name, @inventory.store_id) %>
+  </p>
+
+  <p>
+    <%= f.label :store_location %><br>
+    <%= f.select :store_location_id, options_from_collection_for_select(StoreLocation.all, :id, :name, @inventory.store_location_id) %>
+  </p>
+
+ <p>
+   <%= f.label :bprice %><br>
+   <%= f.text_field :bprice %>
+ </p>
+
+ <p>
+   <%= f.label :sprice %><br>
+   <%= f.text_field :sprice %>
+ </p>
+
+ <p>
+   <%= f.label :offer %><br>
+   <%= f.text_field :offer %>
+ </p>
+
+ <p>
+   <%= f.label :sku %><br>
+   <%= f.text_field :sku %>
+ </p>

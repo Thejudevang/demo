@@ -1,0 +1,57 @@
+<% if @store.errors.any? %>
+   <div id="error_explanation">
+     <h2>
+       <%= pluralize(@store.errors.count, "error") %> prohibited
+       this store from being saved:
+     </h2>
+     <ul>
+       <% @store.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+       <% end %>
+     </ul>
+   </div>
+ <% end %>
+
+  <p>
+    <%= f.label :store_location %><br>
+    <%= f.select :store_location_id, options_from_collection_for_select(StoreLocation.all, :id, :name, @store.store_location_id) %>
+  </p>
+
+  <p>
+    <%= f.label :brand %><br>
+    <%= f.select :brand_id, options_from_collection_for_select(Brand.all, :id, :name, @store.brand_id) %>
+  </p>
+
+ <p>
+   <%= f.label :name %><br>
+   <%= f.text_field :name %>
+ </p>
+ <p>
+   <%= f.label :city %><br>
+   <%= f.text_field :city %>
+ </p>
+ <p>
+   <%= f.label :state %><br>
+   <%= f.text_field :state %>
+ </p>
+ <p>
+   <%= f.label :country %><br>
+   <%= f.text_field :country %>
+ </p>
+ <p>
+   <%= f.label :pincode %><br>
+   <%= f.text_field :pincode %>
+ </p>
+ <p>
+   <%= f.label :phoneno %><br>
+   <%= f.text_field :phoneno %>
+ </p>
+ <p>
+   <%= f.label :merchant %><br>
+   <%= f.text_field :merchant %>
+ </p>
+
+ <p>
+   <%= f.file_field :logo %>
+   <%= image_tag @store.logo.url(:thumb) %>
+ </p>

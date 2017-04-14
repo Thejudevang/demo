@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Mobmerry</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="<%= welcome_index_url %>">
+          Mobmerry
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bulk Upload <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="">Feeds</a></li>
+                <li><a href="">Upload Images</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Merchant <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Manager</a></li>
+                <li><a href="#">SMS Blast</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="">Logout</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="sidebar-nav nav">
+            <li class="sidebar-brand"><%= link_to 'Categories', welcome_index_url%></li>
+            <li><%= link_to 'Cities', cities_url %></li>
+            <li><%= link_to 'Store Locations', store_locations_url %></li>
+            <li><%= link_to 'Brands', brands_url%></li>
+            <li><%=link_to 'Stores', stores_url%></li>
+            <li><%= link_to 'Products', products_url %></li>
+            <li><%= link_to 'Inventories', inventories_url%></li>
+        </ul>
+      </div>
+      <div class="col-sm-10">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

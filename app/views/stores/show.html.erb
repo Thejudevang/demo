@@ -1,0 +1,57 @@
+<div class="page-body">
+    <div class="row">
+      <div class="col-md-2">
+        <strong style="margin-right:10px;">Name: </strong>
+				<%= @store.name %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <strong style="margin-right:10px;">City: </strong>
+					<%= @store.city %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <strong style="margin-right:10px;">State: </strong>
+        <%= @store.state %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <strong style="margin-right:10px;">Country: </strong>
+        <%= @store.country %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <strong style="margin-right:10px;">PinCode: </strong>
+        <%= @store.pincode %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <strong style="margin-right:10px;">PhoneNo: </strong>
+        <%= @store.phoneno %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <strong style="margin-right:10px;">Merchant: </strong>
+        <%= @store.merchant %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <strong style="margin-right:10px;">Logo: </strong>
+        <%= image_tag @store.logo.url(:thumb) %>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="table-responsive">
+  <div align="right">
+    <%= link_to 'AddStoreLocation', new_store_location_url, class: "btn btn-primary" %>
+  </div> 
+<table class="table table-striped">
+<thead>
+  <tr>
+  <th> Logo </th>
+    <th>Name</th>
+    <th>Latitude</th>
+    <th>Lonitude</th>
+    <th colspan="2"></th>
+  </tr>
+  </thead>
+ 
+ <tbody>
+  <% @store_locations.each do |store_location| %>
+    <tr>
+      <td><%= image_tag store_location.logo.url(:thumb) %></td>
+      <td><%= store_location.name %></td>
+      <td><%= store_location.lat %></td>
+      <td><%= store_location.lng %></td>
+      <td><%= link_to 'view', store_location_path(store_location) %>|<%= link_to 'Edit', edit_store_location_path(store_location) %>|<%= link_to 'Delete', store_location_path(store_location),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>

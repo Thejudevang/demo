@@ -1,0 +1,33 @@
+<% if @product.errors.any? %>
+   <div id="error_explanation">
+     <h2>
+       <%= pluralize(@product.errors.count, "error") %> prohibited
+       this product from being saved:
+     </h2>
+     <ul>
+       <% @product.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+       <% end %>
+     </ul>
+   </div>
+ <% end %>
+
+  <p>
+    <%= f.label :brand %><br>
+    <%= f.select :brand_id, options_from_collection_for_select(Brand.all, :id, :name, @product.brand_id) %>
+  </p>
+
+ <p>
+   <%= f.label :style %><br>
+   <%= f.text_field :style %>
+ </p>
+
+ <p>
+   <%= f.label :title %><br>
+   <%= f.text_field :title %>
+ </p>
+
+ <p>
+   <%= f.file_field :logo %>
+   <%= image_tag @product.logo.url(:thumb) %>
+ </p>

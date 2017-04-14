@@ -1,0 +1,35 @@
+<div class="table-responsive">
+	<div align="right">
+	 <%= link_to 'AddNew Brand', new_brand_url, class: "btn btn-primary" %>
+	</div>
+	<h1> Brands</h1>
+	<div align="right">
+		<%= form_tag(brands_path, :method => "get", id: "search-form") do %>
+		<%= text_field_tag :search, params[:search], placeholder: "search-brands" %>
+		<%= submit_tag "search", class: "btn btn-primary" %>
+		<% end %>
+	</div>
+
+<table class="table table-striped">
+	<thead>
+	<tr>
+		<th> Logo </th>
+		<th> Name </th>
+		<th> Create_At</th>
+		<th> Upadted_At </th>
+		<th> Action </th>
+	</tr>
+	</thead>
+	<tbody>
+	<% @brands.each do |brand| %>
+	<tr>
+	<td> <%= image_tag brand.logo.url(:thumb) %></td>
+		<td> <%= brand.name %></td>
+		<td> <%= brand.created_at %></td>
+		<td> <%= brand.updated_at %></td>
+		<td> <%= link_to 'view', brand_url(brand.id) %>|<%= link_to 'Edit', edit_brand_path(brand) %>|<%= link_to 'Delete', brand_path(brand),method: :delete,data: { confirm: 'Are you sure?' } %></td>
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+</div>

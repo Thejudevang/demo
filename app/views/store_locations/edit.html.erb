@@ -1,0 +1,12 @@
+<div class="page-body">
+<%= form_for @store_location, url: store_location_url do |f|%>
+
+<%= render partial: 'form', locals: { f: f } %>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-4">
+          <%= f.submit 'Update', class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+</div>

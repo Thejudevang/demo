@@ -1,0 +1,12 @@
+<div class="page-body">
+<%= form_for @city, url: city_path, method: :patch do |f| %>
+
+  <%= render partial: 'form', locals: { f: f } %>
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-4">
+    <%= f.submit 'Update', class: "btn btn-primary" %>
+  </div>
+</div>
+<% end %>
+</div>

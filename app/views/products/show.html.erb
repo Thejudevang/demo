@@ -1,0 +1,22 @@
+  <div class="page-body">
+    <div class="row">
+      <div class="col-md-2">
+        <strong style="margin-right:10px;">Style: </strong>
+          <%= @product.style%>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <strong style="margin-right:10px;">Title: </strong>
+        <%= @product.title%>>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2">
+        <strong style="margin-right:10px;">Logo: </strong>
+        <%= image_tag @product.logo.url(:thumb) %>
+      </div>
+    </div>
+  </div>
